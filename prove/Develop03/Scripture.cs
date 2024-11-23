@@ -6,10 +6,14 @@ public class Scripture
     private Reference _reference;
     private List<Word> _words;
 
+    private string _lastHiddenWord;
+
+
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
-        _words = text.Split("").Select(word => new Word(word)).ToList();
+        _words = text.Split(" ").Select(word => new Word(word)).ToList();
+        _lastHiddenWord = null;
 
     }
 
@@ -22,24 +26,28 @@ public class Scripture
         {
             List<Word> visibleWords = _words.Where(w => !w.IsHidden()).ToList();
 
-            if (visibleWords.Count == 0)
-            {
-                hiddenCount = numberToHide;
-            }
-            else
+            if (visibleWords.Count > 0)
             {
                 int randomIndex = random.Next(visibleWords.Count);
                 Word wordToHide = visibleWords[randomIndex];
                 wordToHide.Hide();
+                _lastHiddenWord = wordToHide.GetOriginalText();
                 hiddenCount++;
+            }
+            else
+            {
+                hiddenCount = numberToHide;
+
             }
         }
     }
 
     public string GetDisplayText()
     {
-        string wordsDisplay = string.Join("", _words.Select(w => w.GetDisplayText()));
-        return $"{_reference.GetDisplayText()}\n{wordsDisplay}";
+        string wordsDisplay = string.Join("  ", _words.Select(w => w.GetDisplayText()));
+
+        return $"{_reference.GetDisplayText()} {wordsDisplay}";
+
 
     }
 
@@ -47,5 +55,10 @@ public class Scripture
     {
         return _words.All(w => w.IsHidden());
 
+    }
+
+    public string GetLastHiddenWord()
+    {
+        return _lastHiddenWord;
     }
 }

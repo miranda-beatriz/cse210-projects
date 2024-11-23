@@ -9,6 +9,7 @@ public class Word
     public Word(string text)
     {
         _text = text;
+        _isHidden = false;
     }
 
     public void Hide()
@@ -31,6 +32,18 @@ public class Word
     public string GetDisplayText()
     {
 
-        return _isHidden ? "____" : _text;
+        if (_isHidden)
+        {
+            return string.Join(" ", _text.Select(c => "_"));
+        }
+        else
+        {
+            return _text;
+        }
+    }
+
+    public string GetOriginalText()
+    {
+        return _text;
     }
 }
