@@ -1,3 +1,4 @@
+// To exceed the requirements, I asked the user to write each missing word to help memorize the scripture. 
 using System;
 
 class Program
