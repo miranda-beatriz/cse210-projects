@@ -7,6 +7,8 @@ public class Video
     private int _length;
     private List<Comment> _comment;
 
+    private List<Video> _video;
+
 
 
     public Video(string title, string author, int length)
@@ -15,6 +17,7 @@ public class Video
         _author = author;
         _length = length;
         _comment = new List<Comment>();
+        _video = new List<Video>();
     }
 
     public void DisplayInfo()
