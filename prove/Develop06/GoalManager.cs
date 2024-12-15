@@ -212,19 +212,6 @@ namespace GoalTracker
             }
 
         }
-        private int ExtractPointsFromDetails(string details)
-        {
-            string[] parts = details.Split(' ');
-            for (int i = parts.Length - 2; i >= 0; i--)
-            {
-                if (parts[i] == "points")
-                {
-                    return int.Parse(parts[i - 1]);
-                }
-            }
-            return 0;
-        }
-
         public void SaveGoals()
         {
 
