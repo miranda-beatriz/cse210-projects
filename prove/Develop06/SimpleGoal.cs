@@ -30,7 +30,6 @@ namespace GoalTracker
 
         public override string GetStringRepresentation()
         {
-            //return $" Simple Goal [{(IsComplete() ? "X" : " ")}]  {_shortName}: {_description} {_points} points";
             return $"Simple Goal:{_shortName},{_description},{_points},{IsComplete()}";
 
         }
