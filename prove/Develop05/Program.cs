@@ -3,7 +3,6 @@ using System;
 
 namespace MindfulnessApp
 {
-    using System;
 
     class Program
     {
