@@ -17,11 +17,20 @@ namespace FitnessCenter
             Speed = speed;
         }
 
-        public override int GetDistance() => Speed * Duration / 60;
+        public override int GetDistance()
+        {
+            return Speed * Duration / 60;
+        }
 
-        public override int GetSpeed() => Speed;
+        public override int GetSpeed()
+        {
+            return Speed;
+        }
 
-        public override int GetPace() => 60 / Speed;
+        public override int GetPace()
+        {
+            return 60 / Speed;
+        }
     }
 
 }

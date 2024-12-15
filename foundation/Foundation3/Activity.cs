@@ -27,7 +27,8 @@ namespace FitnessCenter
 
         public virtual string GetSummary()
         {
-            return $"{_date} {_type} ({_duration} min): Distance: {GetDistance()} km, Speed: {GetSpeed()} kph, Pace: {GetPace()} min per km";
+            return $"{_date:dd MMM yyyy} {_type} ({Duration} min): Distance: {GetDistance()} km, Speed: {GetSpeed()} kph, Pace: {GetPace()} min per km";
+
         }
     }
 }

@@ -13,18 +13,18 @@ namespace FitnessCenter
 
         public override int GetDistance()
         {
-            return 0;
+            return (_laps * LapDistance) / 1000;
         }
 
         public override int GetSpeed()
         {
-            return 0;
+            return (GetDistance() * 60) / Duration;
         }
 
         public override int GetPace()
         {
-            return 0;
+            return Duration / GetDistance();
         }
-        
+
     }
 }
