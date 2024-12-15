@@ -87,7 +87,7 @@ namespace GoalTracker
 
             Console.WriteLine("\nGoals:");
 
-            int counter = 1; // Inicializa o contador
+            int counter = 1;
 
             foreach (var goal in _goals)
             {
