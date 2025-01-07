@@ -4,7 +4,7 @@ namespace GoalTracker
 {
     public class EternalGoal : Goal
     {
-        private bool _isComplete;
+        protected bool _isComplete;
         public EternalGoal(string name, string description, int points) : base(name, description, points)
         {
             _isComplete = false;
